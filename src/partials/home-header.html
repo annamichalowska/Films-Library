@@ -1,0 +1,70 @@
+<header class="header__background header-home__bg">
+  <div class="container header__container">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">
+        <svg class="nav__logo-icon" width="24" height="24">
+          <use href="./images/icons.svg#logo"></use>
+        </svg>
+        <span class="nav__logo-name"> Filmoteka </span>
+      </a>
+      <ul class="nav__side-nav">
+        <li class="nav__side-nav-item">
+          <a href="index.html" class="nav__side-nav-link active" id="home-link">
+            Home</a
+          >
+        </li>
+
+        <li class="nav__side-nav-item" id="sign-out-item">
+          <a
+            href="index-my-library.html"
+            class="nav__side-nav-link"
+            id="my-library-link"
+          >
+            My library
+          </a>
+        </li>
+        <li class="nav__side-nav-item">
+          <button type="button" class="nav__side-nav-link" id="loginBtn">
+            Sign in
+          </button>
+        </li>
+
+        <li class="nav__side-nav-item">
+          <button type="button" class="nav__side-nav-link" id="sign-out-btn">
+            Sign Out
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <div style="position: relative;">
+      <form class="header-search-form" id="header-search-form">
+        <div class="header-search-form__box">
+          <input
+            class="header-search-form__input"
+            type="text"
+            name="searchQuery"
+            autocomplete="off"
+            placeholder="Search videos..."
+          />
+          <button class="header-search-form__btn" type="submit">
+            <svg class="header-search-form__icon">
+              <use href="./images/icons.svg#search-icon"></use>
+            </svg>
+          </button>
+        </div>
+      </form>
+      <p id="randomlink">
+        Hard choice? Try
+        <button
+          class="header-search-form__random-btn"
+          id="randomBtn"
+          type="button"
+        >
+          Draw
+        </button>
+      </p>
+    </div>
+    <p class="search-error is-hidden"></p>
+  </div>
+  <script type="module" src="./js/home-library.js" defer></script>
+</header>

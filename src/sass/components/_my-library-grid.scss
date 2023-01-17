@@ -1,0 +1,207 @@
+.grid_my_library {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 60px;
+    margin-bottom: 50px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-top: 60px;
+    margin-bottom: 50px;
+  }
+
+  &__elements {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    justify-content: center;
+
+    @media screen and (min-width: 768px) {
+      max-width: unset;
+      gap: 30px;
+      justify-content: flex-start;
+    }
+
+    @media screen and (min-width: 1024px) {
+      max-width: unset;
+      justify-content: flex-start;
+    }
+    &.hidden {
+      opacity: 0;
+    }
+  }
+
+  &__element {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 294px;
+    @media screen and (min-width: 768px) {
+      width: 49%;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 31%;
+    }
+  }
+
+  &__element-img {
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    object-fit: cover;
+    @media screen and (min-width: 768px) {
+      height: 398px;
+    }
+    @media screen and (min-width: 1024px) {
+      height: 398px;
+    }
+  }
+
+  &__label {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: get-bg-color(leading);
+    transform: translate(100%);
+    transition-property: transform;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    opacity: 0.85;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+
+    &-text {
+      font-size: 35px;
+      padding: 0 10px;
+      text-align: center;
+      color: get-font-color(on-leading-bg);
+      text-transform: uppercase;
+    }
+  }
+
+  &__signature {
+    padding-top: 10px;
+    position: relative;
+    background-color: get-bg-color(basic);
+    z-index: 3;
+    height: 70px;
+    width: 100%;
+  }
+
+  &__element-title,
+  &__element-category,
+  &__element-year {
+    line-height: 1.33;
+    font-weight: 500;
+    font-size: 12px;
+  }
+
+  &__element-title {
+    color: get-font-color(dark-text);
+    text-transform: uppercase;
+  }
+
+  &__element-category,
+  &__element-year {
+    color: get-font-color(leading);
+  }
+
+  &__element-year::before {
+    content: ' | ';
+  }
+
+  &__element-score {
+    display: inline-block;
+    line-height: 1.17;
+    font-size: 12px;
+    font-weight: 500;
+    color: get-font-color(on-leading-bg);
+    background: get-bg-color(header-underline);
+    padding: 1px 6px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  &__element-empty {
+    position: relative;
+    width: 100%;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      left: 0;
+      top: 15%;
+      height: 70%;
+      background-color: transparentize(#ff6b0a, 0.3);
+      z-index: 1;
+    }
+  }
+
+  &__element-empty-img {
+    position: relative;
+    z-index: 2;
+    background: url('../images/my-library/my-library-empty-state.png') no-repeat
+      0 100% / contain;
+    width: 411px;
+    height: 373px;
+    max-width: 100%;
+  }
+
+  &__element-empty-txt {
+    position: relative;
+    z-index: 3;
+    right: 0;
+    top: 0;
+    font-size: 35px;
+    font-weight: 300;
+    transform: rotate(5deg) scale(0.9);
+    background-color: get-bg-color(basic);
+    box-sizing: border-box;
+    padding: 30px;
+    user-select: none;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin-bottom: unset;
+      transform: rotate(5deg) scale(0.8);
+    }
+
+    @media screen and (min-width: 1024px) {
+      position: absolute;
+      right: 5%;
+      top: 5%;
+      margin-bottom: unset;
+      transform: rotate(5deg) scale(1);
+    }
+    strong {
+      text-decoration: underline;
+      color: #ff6b0a;
+      font-weight: 700;
+      font-size: 45px;
+      right: 5%;
+      top: 5%;
+    }
+  }
+}
+
+.grid_my_library__element:hover .grid_my_library__label {
+  transform: translateY(0);
+}

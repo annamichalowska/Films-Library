@@ -1,0 +1,295 @@
+.no-scroll {
+  overflow-y: hidden;
+  @media screen and (min-width: 1024px) {
+    // padding-right: 15px;
+
+    body::-webkit-scrollbar {
+      width: 0.2em;
+      background-color: #f5f5f5;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: #000000;
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .no-scroll > .backdrop {
+    // padding-right: 15px;
+
+    body::-webkit-scrollbar {
+      width: 0.2em;
+      background-color: #f5f5f5;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: #000000;
+    }
+  }
+}
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  display: none;
+}
+
+.is-hidden {
+  .more-info-modal {
+    transform: scale(0.5);
+  }
+}
+
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition-property: visibility, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: linear;
+}
+
+.container-modal {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 28px;
+    margin-right: 28px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin-left: 30px;
+    margin-right: 30px;
+    gap: 30px;
+    align-items: flex-start;
+  }
+}
+
+.more-info-modal {
+  position: relative;
+  background-color: get-bg-color(basic);
+  color: get-font-color(dark-text);
+  max-width: 100%;
+  max-height: 100vh;
+  overflow: auto;
+
+  transition-property: transform;
+  transition-duration: 400ms;
+  transition-timing-function: linear;
+  transform: scale(1);
+
+  @media screen and (min-width: 1024px) {
+    max-width: 882px;
+  }
+
+  &__close-btn {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    cursor: pointer;
+    transition-property: scale, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    &:hover {
+      color: get-bg-color(leading);
+      cursor: pointer;
+      scale: 1.1;
+    }
+    @media screen and (min-width: 768px) {
+      top: 10px;
+      right: 10px;
+    }
+    @media screen and (min-width: 1024px) {
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  &__poster {
+    display: block;
+    max-width: 240px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 30.43;
+    margin-top: 48px;
+    @media screen and (min-width: 768px) {
+      width: 264px;
+      height: auto;
+      margin-bottom: 40px;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 396px;
+      height: auto;
+      margin-bottom: 40.2;
+      margin-top: 50px;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: row;
+    gap: 39px;
+
+    &--header {
+      font-size: 12px;
+      line-height: 1.33;
+      color: get-font-color(light-text);
+      margin-top: 10px;
+    }
+
+    &--text {
+      font-size: 12px;
+      line-height: 1.33;
+      margin-top: 10px;
+    }
+
+    &--average {
+      background-color: get-bg-color(leading);
+      border-radius: 5px;
+      padding: 1px 10px 1px 10px;
+      color: get-font-color(on-leading-bg);
+    }
+
+    &--count {
+      padding: 1px 4px 1px 4px;
+      background: get-bg-color(footer-bg);
+      border-radius: 5px;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    @media screen and (min-width: 768px) {
+      margin-top: 42px;
+    }
+    @media screen and (min-width: 1024px) {
+      font-size: 30px;
+      line-height: 1.17;
+      margin-top: 50px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    line-height: 1.33;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  &__text {
+    min-width: 240px;
+    font-size: 12px;
+    line-height: 1.67;
+    @media screen and (min-width: 768px) {
+      min-width: 264px;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 396px;
+    }
+  }
+
+  &__btn-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 14.85;
+    margin-top: 21px;
+    margin-bottom: 41px;
+    @media screen and (min-width: 768px) {
+      gap: 14.94;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      justify-content: flex-start;
+    }
+    @media screen and (min-width: 1024px) {
+      gap: 15;
+      margin-top: 21px;
+      margin-bottom: 40px;
+      justify-content: flex-start;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    font-size: 12px;
+    line-height: 1.33;
+    padding: 14px 8px 12px 8px;
+    border-radius: 5px;
+    height: 44px;
+    border: 0px solid;
+    color: get-font-color(dark-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    cursor: pointer;
+    background-color: get-bg-color(basic);
+    overflow: hidden;
+
+    outline: 1px solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline-color: rgb(134, 134, 129);
+    outline-offset: 0px;
+    text-shadow: none;
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+
+    &:hover {
+      border: 1px solid white;
+      color: get-font-color(on-leading-bg);
+      box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(255, 255, 255, 0.2);
+      outline-color: rgba(255, 255, 255, 0);
+      outline-offset: 10px;
+      text-shadow: 1px 1px 2px #427388;
+      background-color: get-bg-color(leading);
+    }
+
+    @media screen and (min-width: 768px) {
+      padding: 14px 9px 12px 9px;
+    }
+    @media screen and (min-width: 1024px) {
+      padding: 14px 10px 12px 10px;
+    }
+  }
+}
+
+.in-storage {
+  background-color: get-bg-color(leading);
+  color: get-font-color(on-leading-bg);
+  border: none;
+  outline-color: get-font-color(leading);
+
+  &:hover {
+    border: 1px solid black;
+    color: get-font-color(dark-text);
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),
+      0 0 20px rgba(255, 255, 255, 0.2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 10px;
+    text-shadow: 1px 1px 2px #427388;
+    background-color: get-bg-color(basic);
+  }
+}

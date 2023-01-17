@@ -1,0 +1,39 @@
+.footer {
+  & a {
+    color: get-font-color(team);
+  }
+
+  & svg {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  &__text {
+    padding-top: 28.7px;
+    padding-bottom: 29.7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: get-font-color(team);
+    background-color: get-bg-color(footer-bg);
+    font-size: 14px;
+    line-height: 19px;
+    align-items: center;
+    align-content: center;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      padding-top: 30px;
+      padding-bottom: 28px;
+    }
+
+    &-first {
+      margin-right: 0;
+      margin-bottom: 9.9px;
+      @media screen and (min-width: 768px) {
+        margin-bottom: 0;
+        margin-right: 5px;
+      }
+    }
+  }
+}
